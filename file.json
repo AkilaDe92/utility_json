@@ -1,0 +1,402 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "MI-SynApi",
+    "contact": {}
+  },
+  "host": "10.18.50.166:8090",
+  "basePath": "/ubps-api-service",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/transaction-status": {
+      "post": {
+        "summary": "transaction-status",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "transaction-status",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/transaction-status-request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/validate-reference": {
+      "post": {
+        "summary": "validate-reference",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "validate-reference",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/validate-reference-request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/transaction-post": {
+      "post": {
+        "summary": "transaction-post",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "transaction-post",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/transaction-post-request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "transaction-status-request": {
+      "title": "transaction-status-request",
+      "example": {
+        "additional_reference_no_1": "",
+        "additional_reference_no_2": "",
+        "additional_reference_no_3": "",
+        "additional_reference_no_4": "",
+        "additional_reference_no_5": "",
+        "client_id": "misyn_auth_client",
+        "client_transaction_id": "123456",
+        "reference_no": "0766321424",
+        "request_datetime": "2020-02-19T09:38:35.306+00:00",
+        "utility_provider_code": "DIALOG-GSM"
+      },
+      "type": "object",
+      "properties": {
+        "additional_reference_no_1": {
+          "type": "string"
+        },
+        "additional_reference_no_2": {
+          "type": "string"
+        },
+        "additional_reference_no_3": {
+          "type": "string"
+        },
+        "additional_reference_no_4": {
+          "type": "string"
+        },
+        "additional_reference_no_5": {
+          "type": "string"
+        },
+        "client_id": {
+          "type": "string"
+        },
+        "client_transaction_id": {
+          "type": "string"
+        },
+        "reference_no": {
+          "type": "string"
+        },
+        "request_datetime": {
+          "type": "string"
+        },
+        "utility_provider_code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "additional_reference_no_1",
+        "additional_reference_no_2",
+        "additional_reference_no_3",
+        "additional_reference_no_4",
+        "additional_reference_no_5",
+        "client_id",
+        "client_transaction_id",
+        "reference_no",
+        "request_datetime",
+        "utility_provider_code"
+      ]
+    },
+    "validate-reference-request": {
+      "title": "validate-reference-request",
+      "example": {
+        "additional_reference_no_1": "",
+        "additional_reference_no_2": "",
+        "additional_reference_no_3": "",
+        "additional_reference_no_4": "",
+        "additional_reference_no_5": "",
+        "client_id": "misyn_auth_client",
+        "reference_no": "123456",
+        "request_datetime": "2020-02-19T10:42:41.168+00:00",
+        "transaction_amount": "200.00",
+        "utility_provider_code": "DIALOG-GSM"
+      },
+      "type": "object",
+      "properties": {
+        "additional_reference_no_1": {
+          "type": "string"
+        },
+        "additional_reference_no_2": {
+          "type": "string"
+        },
+        "additional_reference_no_3": {
+          "type": "string"
+        },
+        "additional_reference_no_4": {
+          "type": "string"
+        },
+        "additional_reference_no_5": {
+          "type": "string"
+        },
+        "client_id": {
+          "type": "string"
+        },
+        "reference_no": {
+          "type": "string"
+        },
+        "request_datetime": {
+          "type": "string"
+        },
+        "transaction_amount": {
+          "type": "string"
+        },
+        "utility_provider_code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "additional_reference_no_1",
+        "additional_reference_no_2",
+        "additional_reference_no_3",
+        "additional_reference_no_4",
+        "additional_reference_no_5",
+        "client_id",
+        "reference_no",
+        "request_datetime",
+        "transaction_amount",
+        "utility_provider_code"
+      ]
+    },
+    "transaction-post-request": {
+      "title": "transaction-post-request",
+      "example": {
+        "additional_reference_no_1": "",
+        "additional_reference_no_2": "",
+        "additional_reference_no_3": "",
+        "additional_reference_no_4": "",
+        "additional_reference_no_5": "",
+        "branch_code": "001",
+        "branch_name": "HO",
+        "channel": "001",
+        "client_id": "misyn_auth_client",
+        "client_transaction_date": "2020-02-19T09:45:41.809+00:00",
+        "client_transaction_id": "123456",
+        "client_transaction_post_date": "2020-02-19T09:45:41.809+00:00",
+        "reference_no": "001",
+        "request_datetime": "2020-02-19T09:45:41.809+00:00",
+        "transaction_amount": "1",
+        "utility_provider_code": "DIALOG-GSM"
+      },
+      "type": "object",
+      "properties": {
+        "additional_reference_no_1": {
+          "type": "string"
+        },
+        "additional_reference_no_2": {
+          "type": "string"
+        },
+        "additional_reference_no_3": {
+          "type": "string"
+        },
+        "additional_reference_no_4": {
+          "type": "string"
+        },
+        "additional_reference_no_5": {
+          "type": "string"
+        },
+        "branch_code": {
+          "type": "string"
+        },
+        "branch_name": {
+          "type": "string"
+        },
+        "channel": {
+          "type": "string"
+        },
+        "client_id": {
+          "type": "string"
+        },
+        "client_transaction_date": {
+          "type": "string"
+        },
+        "client_transaction_id": {
+          "type": "string"
+        },
+        "client_transaction_post_date": {
+          "type": "string"
+        },
+        "reference_no": {
+          "type": "string"
+        },
+        "request_datetime": {
+          "type": "string"
+        },
+        "transaction_amount": {
+          "type": "string"
+        },
+        "utility_provider_code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "additional_reference_no_1",
+        "additional_reference_no_2",
+        "additional_reference_no_3",
+        "additional_reference_no_4",
+        "additional_reference_no_5",
+        "branch_code",
+        "branch_name",
+        "channel",
+        "client_id",
+        "client_transaction_date",
+        "client_transaction_id",
+        "client_transaction_post_date",
+        "reference_no",
+        "request_datetime",
+        "transaction_amount",
+        "utility_provider_code"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
